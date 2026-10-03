@@ -1,6 +1,6 @@
 # Eyuel Tefera - Portfolio
 
-A modern, minimalist portfolio website built with Next.js, Three.js, and Framer Motion.
+A modern, minimalist portfolio website built with Next.js and Framer Motion.
 
 ## About
 
@@ -9,16 +9,15 @@ Backend/Platform Engineer specializing in reliable, transaction-heavy distribute
 ## Tech Stack
 
 - **Framework**: Next.js 14+ (App Router)
-- **3D Graphics**: Three.js + React Three Fiber
 - **Animations**: Framer Motion
 - **Styling**: Tailwind CSS
 - **Language**: TypeScript
 
 ## Features
 
-- Interactive 3D hero section
+- Matrix rain hero canvas
 - Smooth scroll-based animations
-- Dark theme with professional aesthetic
+- Monochrome dark theme
 - Fully responsive design
 - Optimized performance
 
@@ -40,12 +39,12 @@ npm run build
 ```
 src/
 ├── app/                 # Next.js App Router pages
-├── components/          # React components
-│   ├── 3d/             # Three.js/R3F components
-│   ├── sections/       # Page sections
-│   └── ui/             # Reusable UI components
-├── lib/                # Utilities and helpers
-└── styles/             # Global styles
+├── components/
+│   ├── layout/          # Sidebar + mobile nav
+│   ├── sections/        # Page sections
+│   ├── three/           # MatrixRain canvas
+│   └── ui/              # Reusable UI components
+└── ...
 ```
 
 ## License

@@ -12,54 +12,65 @@ export default function MatrixRain() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Set canvas size
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let columns = 0;
+    let drops: number[] = [];
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*(){}[]<>/\\|";
+
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const w = canvas.clientWidth;
+      const h = canvas.clientHeight;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      const fontSize = w < 640 ? 16 : 14;
+      columns = Math.max(1, Math.floor(w / fontSize));
+      drops = Array.from({ length: columns }, () => Math.random() * -100);
+      ctx.fillStyle = "#000000";
+      ctx.fillRect(0, 0, w, h);
     };
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    // Characters to use
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*(){}[]<>/\\|";
-    const fontSize = 14;
-    const columns = Math.floor(canvas.width / fontSize);
+    let lastTime = 0;
+    let rafId = 0;
 
-    // Initialize drops
-    const drops: number[] = [];
-    for (let i = 0; i < columns; i++) {
-      drops[i] = Math.random() * -100;
-    }
+    const draw = (time: number) => {
+      rafId = requestAnimationFrame(draw);
+      if (time - lastTime < 50) return;
+      lastTime = time;
 
-    // Animation loop
-    const draw = () => {
-      // Fade effect
+      const w = canvas.clientWidth;
+      const h = canvas.clientHeight;
+
       ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
+      ctx.fillRect(0, 0, w, h);
       ctx.fillStyle = "#ffffff";
-      ctx.font = `${fontSize}px monospace`;
+      ctx.font = "14px monospace";
 
       for (let i = 0; i < drops.length; i++) {
         const text = chars[Math.floor(Math.random() * chars.length)];
-        const x = i * fontSize;
-        const y = drops[i] * fontSize;
+        const x = i * (w < 640 ? 16 : 14);
+        const y = drops[i] * (w < 640 ? 16 : 14);
 
         ctx.fillText(text, x, y);
 
-        // Reset drop to top randomly
-        if (y > canvas.height && Math.random() > 0.975) {
+        if (y > h && Math.random() > 0.975) {
           drops[i] = 0;
         }
-
         drops[i]++;
       }
     };
 
-    const interval = setInterval(draw, 50);
+    if (!reduced) {
+      rafId = requestAnimationFrame(draw);
+    }
 
     return () => {
-      clearInterval(interval);
+      cancelAnimationFrame(rafId);
       window.removeEventListener("resize", resizeCanvas);
     };
   }, []);
@@ -67,7 +78,7 @@ export default function MatrixRain() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full opacity-20"
+      className="absolute inset-0 w-full h-full opacity-10"
     />
   );
 }

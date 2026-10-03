@@ -1,4 +1,5 @@
 import Sidebar from "@/components/layout/Sidebar";
+import MobileNav from "@/components/layout/MobileNav";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Experience from "@/components/sections/Experience";
@@ -10,11 +11,14 @@ import CVDownload from "@/components/ui/CVDownload";
 export default function Home() {
   return (
     <div className="flex min-h-screen bg-background">
+      {/* Mobile top nav */}
+      <MobileNav />
+
       {/* Fixed Sidebar */}
       <Sidebar />
 
       {/* Main Content - Scrollable */}
-      <main className="ml-64 flex-1">
+      <main className="ml-0 md:ml-64 flex-1 pt-14 md:pt-0">
         <Hero />
         <About />
         <Experience />

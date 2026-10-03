@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const navItems = [
@@ -15,8 +15,24 @@ const navItems = [
 export default function Sidebar() {
   const [activeSection, setActiveSection] = useState("home");
 
+  useEffect(() => {
+    const sections = navItems.map((item) => document.getElementById(item.href.slice(1)));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+    sections.forEach((section) => section && observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <aside className="fixed left-0 top-0 h-screen w-64 bg-black border-r border-border flex flex-col justify-between p-8 z-50">
+    <aside className="hidden md:flex fixed left-0 top-0 h-screen w-64 bg-black border-r border-border flex-col justify-between p-8 z-50">
       {/* Logo/Name */}
       <div>
         <motion.h1
@@ -49,6 +65,7 @@ export default function Sidebar() {
             >
               <a
                 href={item.href}
+                aria-current={activeSection === item.href.slice(1) ? "page" : undefined}
                 onClick={() => setActiveSection(item.href.slice(1))}
                 className={`block text-sm transition-colors ${
                   activeSection === item.href.slice(1)

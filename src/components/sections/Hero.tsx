@@ -9,7 +9,7 @@ const MatrixRain = dynamic(() => import("@/components/three/MatrixRain"), {
 
 export default function Hero() {
   return (
-    <section id="home" className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+    <section id="home" className="relative min-h-[calc(100dvh-3.5rem)] md:min-h-[100dvh] w-full overflow-hidden flex items-center justify-center">
       {/* Matrix Background */}
       <MatrixRain />
 

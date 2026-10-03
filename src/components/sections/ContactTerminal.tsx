@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
 
 const commands = [
   { label: "email", value: "eyuel.tefera01@gmail.com", href: "mailto:eyuel.tefera01@gmail.com" },
@@ -12,12 +11,6 @@ const commands = [
 ];
 
 export default function ContactTerminal() {
-  const [typedIndex, setTypedIndex] = useState(-1);
-
-  useEffect(() => {
-    console.log("🖥️ ContactTerminal (Option D) is rendering");
-  }, []);
-
   return (
     <section id="contact" className="min-h-screen py-24 px-8 md:px-16 flex items-center justify-center">
       <motion.div
@@ -60,7 +53,6 @@ export default function ContactTerminal() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: 0.1 * (index + 1) }}
-                onViewportEnter={() => setTypedIndex(index)}
                 className="flex items-start"
               >
                 <span className="text-foreground mr-2">&gt;</span>
