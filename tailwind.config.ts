@@ -9,20 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0a0a0f",
-        foreground: "#f8fafc",
-        primary: {
-          DEFAULT: "#3b82f6",
-          foreground: "#f8fafc",
-        },
+        background: "#000000",
+        foreground: "#ffffff",
         accent: {
-          DEFAULT: "#10b981",
-          foreground: "#0a0a0f",
+          DEFAULT: "#ffffff",
+          foreground: "#000000",
         },
         muted: {
-          DEFAULT: "#64748b",
-          foreground: "#f8fafc",
+          DEFAULT: "#666666",
+          foreground: "#999999",
         },
+        border: "#222222",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)"],

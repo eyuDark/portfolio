@@ -2,105 +2,143 @@
 
 import { motion } from "framer-motion";
 
-const projects = [
+const realProjects = [
+  {
+    title: "Dashen Super App Backend Modernization",
+    category: "Fintech Platform",
+    company: "EagleLion",
+    tech: "Node.js, TypeScript, PostgreSQL, Redis, Kubernetes",
+    description:
+      "Modernized backend infrastructure for one of Ethiopia's largest fintech ecosystems. Refactored 50+ services, implemented transaction consistency patterns, and established platform observability.",
+    highlights: [
+      "Architected core transaction platform handling multi-bank transfers and IPS integration",
+      "Built multi-currency payment workflows (FCY) with core banking integration (FCUBS)",
+      "Implemented telecom billing & settlement integrations (Ethio Telecom, Safaricom)",
+      "Designed transaction aggregator service with data normalization across sources",
+      "Established idempotency mechanisms and Redis-based request deduplication",
+    ],
+  },
+  {
+    title: "SACCO Financial Management Platform",
+    category: "Financial System",
+    company: "eTech S.C.",
+    tech: "Java, Vert.x, Angular, PostgreSQL",
+    description:
+      "Enterprise financial management platform tailored for savings and credit cooperatives with multi-tenant architecture serving 12 tenants and 50–120 users per tenant.",
+    highlights: [
+      "Master/tenant database architecture with strict data isolation",
+      "Full financial suite: budgeting, reconciliation, and automated reporting",
+      "Loan management with amortization schedules and penalty calculation engines",
+      "Asynchronous background processing for heavy financial calculations",
+    ],
+  },
+  {
+    title: "Share Management System",
+    category: "Financial System",
+    company: "eTech S.C.",
+    tech: "Java, Vert.x, PostgreSQL, REST APIs",
+    description:
+      "Dedicated platform for managing shareholder records, automated dividend distribution workflows, and real-time stakeholder attendance tracking.",
+    highlights: [
+      "Automated dividend calculation and reinvestment workflows",
+      "Real-time attendance tracking engine for stakeholder assemblies",
+      "Member registration, share tracking, and dividend distribution via RESTful services",
+    ],
+  },
   {
     title: "API Gateway",
+    category: "Personal Project",
+    company: "Personal",
     tech: "Go, Gin, Fasthttp, JWT",
     status: "In Progress",
     description:
-      "Modular API Gateway with middleware for JWT authentication, rate limiting (token bucket), and structured request logging.",
-    features: [
-      "JWT authentication middleware",
-      "Rate limiting with token bucket algorithm",
-      "Reverse proxying and route-based load balancing",
-      "Targeting 90%+ test coverage with testify",
+      "High-performance modular API Gateway designed for microservices architectures with custom middleware, rate limiting, and request proxying.",
+    highlights: [
+      "JWT authentication and token bucket rate limiting middleware",
+      "Reverse proxying and route-based load balancing using fasthttp",
+      "Structured request logging and correlation ID propagation",
+      "Targeting 90%+ test coverage using testify",
     ],
   },
   {
     title: "Library Management System",
+    category: "Personal Project",
+    company: "Personal",
     tech: "Go, Gin, GORM, PostgreSQL, JWT",
     status: "Completed",
     description:
-      "RESTful backend for managing users, books, and loans with comprehensive authentication and authorization.",
-    features: [
-      "JWT authentication with role-based access control",
-      "Unit tests for auth and domain logic",
-      "GORM ORM with PostgreSQL for data persistence",
-    ],
-  },
-  {
-    title: "SACCO Management System",
-    tech: "Java, Angular, PostgreSQL",
-    status: "Production",
-    description:
-      "Comprehensive financial management platform for savings and credit cooperatives with full accounting capabilities.",
-    features: [
-      "Budgeting and reconciliation modules",
-      "Dividend calculations and reinvestment workflows",
-      "Real-time attendance tracking",
-      "Member registration and share tracking",
+      "RESTful backend service for managing users, catalog, and lending workflows with role-based access control.",
+    highlights: [
+      "Role-based access control (RBAC) with JWT authentication",
+      "Relational data modeling and persistence using GORM and PostgreSQL",
+      "Comprehensive unit test suite for auth and domain logic",
     ],
   },
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-4 md:px-8 max-w-4xl mx-auto">
-      <motion.h2
-        className="text-3xl md:text-4xl font-bold mb-12 text-center"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <span className="text-primary">Personal</span> Projects
-      </motion.h2>
+    <section id="projects" className="min-h-screen py-24 px-8 md:px-16 flex items-center justify-center">
+      <div className="w-full max-w-3xl">
+        <motion.h2
+          className="text-4xl md:text-5xl font-bold mb-4"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Projects
+        </motion.h2>
 
-      <div className="grid gap-6">
-        {projects.map((project, index) => (
-          <motion.div
-            key={project.title}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            whileHover={{ scale: 1.02 }}
-            className="bg-background/50 border border-muted/20 rounded-xl p-6 hover:border-primary/50 transition-all cursor-pointer"
-          >
-            <div className="flex items-start justify-between mb-3">
-              <h3 className="text-xl font-semibold text-foreground">
-                {project.title}
-              </h3>
-              <span
-                className={`text-xs px-2 py-1 rounded-full ${
-                  project.status === "Production"
-                    ? "bg-accent/20 text-accent"
-                    : project.status === "In Progress"
-                      ? "bg-primary/20 text-primary"
-                      : "bg-muted/20 text-muted"
-                }`}
-              >
-                {project.status}
-              </span>
-            </div>
+        <motion.p
+          className="text-muted mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          Key platforms, systems, and open-source projects I&apos;ve built or contributed to.
+        </motion.p>
 
-            <p className="text-sm text-primary mb-3">{project.tech}</p>
+        <div className="space-y-10">
+          {realProjects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="border border-border p-6 hover:border-foreground transition-colors"
+            >
+              <div className="flex items-start justify-between mb-2">
+                <div>
+                  <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
+                  <p className="text-xs text-muted mb-2">
+                    {project.company} · {project.category}
+                  </p>
+                </div>
+                {project.status && (
+                  <span className="text-xs border border-border px-2 py-0.5 text-muted">
+                    {project.status}
+                  </span>
+                )}
+              </div>
 
-            <p className="text-muted mb-4">{project.description}</p>
+              <p className="text-xs text-muted mb-3 font-mono">{project.tech}</p>
 
-            <ul className="space-y-1">
-              {project.features.map((feature, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-2 text-sm text-muted"
-                >
-                  <span className="text-accent">✓</span>
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        ))}
+              <p className="text-sm text-muted mb-4 leading-relaxed">{project.description}</p>
+
+              <ul className="space-y-1.5 border-t border-border/50 pt-3">
+                {project.highlights.map((highlight, i) => (
+                  <li key={i} className="text-xs text-muted flex items-start gap-2">
+                    <span className="text-foreground">—</span>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

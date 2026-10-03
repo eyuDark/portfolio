@@ -4,85 +4,145 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    title: "Full Stack Developer",
-    company: "Etech SC",
-    location: "Addis Ababa, Ethiopia",
-    period: "Dec 2023 – Sep 2025",
+    title: "Back End Developer",
+    company: "EagleLion System Technology",
+    type: "Full-time",
+    location: "Addis Ababa, Ethiopia · On-site",
+    period: "Oct 2025 – Present",
+    domain: "FinTech",
     highlights: [
-      "Developed comprehensive financial management platform (SACCO) for financial institutions",
-      "Built modules for budgeting, reconciliation, and financial reporting",
-      "Automated dividend calculations and real-time attendance tracking",
-      "Mentored junior developers in Angular, Java, and PostgreSQL",
+      "Contributing to Dashen Super App backend modernization across 50+ services",
+      "Optimizing high-volume transaction workflows, idempotency, and deduplication",
+      "Core banking integrations (Flexcube/FCUBS) and multi-currency (FCY) payments",
+      "External financial network integrations: IPS, Telecom Postpaid, Mastercard MPGS",
+      "Platform engineering: Transaction Aggregator, Notification services, Fee engine",
     ],
   },
   {
-    title: "Backend Engineer",
-    company: "Eaglelion System Technologies",
-    location: "Addis Ababa, Ethiopia",
-    period: "Dec 2023 – Sep 2025",
+    title: "eTech S.C.",
+    type: "Full-time",
+    period: "Jan 2024 – Sep 2025 · 1 yr 9 mos",
+    roles: [
+      {
+        title: "Software Engineer",
+        period: "Aug 2024 – Sep 2025 · 1 yr 2 mos",
+        skills: "Angular, Java (Vert.x), PostgreSQL, REST APIs",
+        highlights: [
+          "Developed multi-tenant SACCO management platform serving 12 tenants",
+          "Built financial suite: budgeting, reconciliation, reporting, and loan amortization",
+          "Automated dividend calculations and real-time attendance tracking",
+          "Mentored junior developers and led code reviews",
+        ],
+      },
+      {
+        title: "Junior Software Developer",
+        period: "Jan 2024 – Aug 2024 · 8 mos",
+        location: "Addis Ababa, Ethiopia · On-site",
+        skills: "HTML5, CSS, JavaScript, PostgreSQL",
+        highlights: [
+          "Contributed to frontend and backend components for enterprise platforms",
+          "Built server-side functionality for inventory and asset management",
+          "Assisted in internal common library development for code reuse",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Full Stack Developer (Internship)",
+    company: "Irak technologies",
+    type: "Internship",
+    location: "Addis Ababa",
+    period: "Jan 2024 – Mar 2024 · 3 mos",
+    skills: "React.js, Node.js",
     highlights: [
-      "Contributing to Dashen Super App backend modernization (Ethiopia's largest fintech ecosystem)",
-      "Optimizing high-volume transaction workflows for improved throughput",
-      "Refactoring legacy services and ensuring best-practice implementation",
-      "Re-implementing unstable third-party integrations for improved reliability",
-      "Enhancing database queries and transaction logic for scalability",
+      "Built web applications using React.js and Node.js",
+      "Collaborated on full-stack feature development and API integrations",
     ],
   },
 ];
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-4 md:px-8 max-w-4xl mx-auto">
-      <motion.h2
-        className="text-3xl md:text-4xl font-bold mb-12 text-center"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <span className="text-primary">Work</span> Experience
-      </motion.h2>
+    <section id="experience" className="min-h-screen py-24 px-8 md:px-16 flex items-center justify-center">
+      <div className="w-full max-w-3xl">
+        <motion.h2
+          className="text-4xl md:text-5xl font-bold mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Experience
+        </motion.h2>
 
-      <div className="space-y-8">
-        {experiences.map((exp, index) => (
-          <motion.div
-            key={exp.company}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="bg-background/50 border border-muted/20 rounded-xl p-6 hover:border-primary/50 transition-colors"
-          >
-            <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-              <div>
-                <h3 className="text-xl font-semibold text-foreground">
-                  {exp.title}
-                </h3>
-                <p className="text-primary font-medium">{exp.company}</p>
-                <p className="text-sm text-muted">{exp.location}</p>
-              </div>
-              <p className="text-sm text-muted mt-2 md:mt-0 md:text-right">
-                {exp.period}
-              </p>
-            </div>
+        <div className="space-y-12">
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={exp.company || exp.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="border-l-2 border-border pl-8"
+            >
+              {/* Single Role Company */}
+              {exp.company && (
+                <>
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-semibold mb-1">{exp.title}</h3>
+                    <p className="text-lg text-foreground">{exp.company} · {exp.type}</p>
+                    <p className="text-sm text-muted">
+                      {exp.location} · {exp.period}
+                      {exp.domain && ` · ${exp.domain}`}
+                    </p>
+                  </div>
 
-            <ul className="space-y-2">
-              {exp.highlights.map((highlight, i) => (
-                <motion.li
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.1 * i }}
-                  className="flex items-start gap-2 text-muted"
-                >
-                  <span className="text-accent mt-1">▸</span>
-                  <span>{highlight}</span>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-        ))}
+                  <ul className="space-y-2">
+                    {exp.highlights?.map((highlight, i) => (
+                      <li key={i} className="text-muted flex items-start gap-2">
+                        <span className="text-foreground">—</span>
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+
+              {/* Multi-Role Company (eTech) */}
+              {exp.roles && (
+                <>
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-semibold mb-1">{exp.title}</h3>
+                    <p className="text-sm text-muted">{exp.period}</p>
+                  </div>
+
+                  <div className="space-y-6">
+                    {exp.roles.map((role, rIndex) => (
+                      <div key={rIndex} className="border-l border-border/50 pl-4">
+                        <div className="mb-2">
+                          <h4 className="text-lg font-medium">{role.title}</h4>
+                          <p className="text-xs text-muted">{role.period}</p>
+                          {role.skills && (
+                            <p className="text-xs text-muted mt-1">Skills: {role.skills}</p>
+                          )}
+                        </div>
+
+                        <ul className="space-y-1">
+                          {role.highlights.map((highlight, i) => (
+                            <li key={i} className="text-sm text-muted flex items-start gap-2">
+                              <span className="text-foreground">—</span>
+                              <span>{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

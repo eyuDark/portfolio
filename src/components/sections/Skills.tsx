@@ -36,83 +36,60 @@ const certifications = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-4 md:px-8 max-w-5xl mx-auto">
-      <motion.h2
-        className="text-3xl md:text-4xl font-bold mb-12 text-center"
+    <section id="skills" className="min-h-screen py-24 px-8 md:px-16 flex items-center justify-center">
+      <div className="w-full max-w-3xl">
+        <motion.h2
+        className="text-4xl md:text-5xl font-bold mb-12"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.5 }}
       >
-        <span className="text-primary">Tech</span> Stack
+        Skills
       </motion.h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
         {skillCategories.map((category, index) => (
           <motion.div
             key={category.title}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-background/50 border border-muted/20 rounded-xl p-4 md:p-6 hover:border-primary/50 transition-colors"
+            transition={{ duration: 0.4, delay: index * 0.05 }}
           >
-            <h3 className="text-lg font-semibold text-primary mb-3">
+            <h3 className="text-sm font-semibold mb-3 text-foreground">
               {category.title}
             </h3>
-            <div className="flex flex-wrap gap-2">
-              {category.skills.map((skill, i) => (
-                <motion.span
-                  key={skill}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 0.05 * i }}
-                  className="px-3 py-1 bg-muted/10 text-muted-foreground text-sm rounded-full border border-muted/20 hover:border-accent/50 hover:text-accent transition-colors"
-                >
+            <ul className="space-y-1">
+              {category.skills.map((skill) => (
+                <li key={skill} className="text-muted text-sm">
                   {skill}
-                </motion.span>
+                </li>
               ))}
-            </div>
+            </ul>
           </motion.div>
         ))}
       </div>
 
       {/* Certifications */}
       <motion.div
-        className="mt-12 bg-background/50 border border-muted/20 rounded-xl p-6"
-        initial={{ opacity: 0, y: 30 }}
+        className="mt-16 border border-border p-8"
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.5 }}
       >
-        <h3 className="text-xl font-semibold text-foreground mb-4">
-          Certifications
-        </h3>
+        <h3 className="text-xl font-semibold mb-4">Certifications</h3>
         <div className="space-y-3">
-          {certifications.map((cert, index) => (
-            <motion.div
-              key={cert.name}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="flex items-center justify-between"
-            >
+          {certifications.map((cert) => (
+            <div key={cert.name} className="flex items-center justify-between">
               <span className="text-muted">{cert.name}</span>
-              <span
-                className={`text-sm px-3 py-1 rounded-full ${
-                  cert.status === "Completed"
-                    ? "bg-accent/20 text-accent"
-                    : "bg-primary/20 text-primary"
-                }`}
-              >
-                {cert.status}
-              </span>
-            </motion.div>
+              <span className="text-sm text-foreground">{cert.status}</span>
+            </div>
           ))}
         </div>
       </motion.div>
+      </div>
     </section>
   );
 }
