@@ -78,7 +78,7 @@ export default function MatrixRain() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full opacity-10"
+      className="fixed inset-0 w-full h-full opacity-10 pointer-events-none"
     />
   );
 }

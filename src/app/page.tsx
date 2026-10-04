@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Sidebar from "@/components/layout/Sidebar";
 import MobileNav from "@/components/layout/MobileNav";
 import Hero from "@/components/sections/Hero";
@@ -7,18 +10,20 @@ import Projects from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
 import ContactTerminal from "@/components/sections/ContactTerminal";
 import CVDownload from "@/components/ui/CVDownload";
+import MatrixRain from "@/components/three/MatrixRain";
 
 export default function Home() {
+  const [navOpen, setNavOpen] = useState(false);
+
   return (
     <div className="flex min-h-screen bg-background">
-      {/* Mobile top nav */}
-      <MobileNav />
+      <MatrixRain />
 
-      {/* Fixed Sidebar */}
+      <MobileNav open={navOpen} setNavOpen={setNavOpen} />
+
       <Sidebar />
 
-      {/* Main Content - Scrollable */}
-      <main className="ml-0 md:ml-64 flex-1 pt-14 md:pt-0">
+      <main className="relative z-10 ml-0 md:ml-64 flex-1 pt-14 md:pt-0">
         <Hero />
         <About />
         <Experience />
@@ -27,8 +32,7 @@ export default function Home() {
         <ContactTerminal />
       </main>
 
-      {/* Floating CV Download Button */}
-      <CVDownload />
+      <CVDownload hidden={navOpen} />
     </div>
   );
 }

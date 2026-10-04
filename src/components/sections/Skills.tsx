@@ -25,7 +25,7 @@ const skillCategories = [
   },
   {
     title: "Practices",
-    skills: ["REST APIs", "CI/CD", "Unit Testing", "SDLC", "Agile"],
+    skills: ["REST APIs", "CI/CD", "Idempotency", "Distributed Systems", "Agile"],
   },
 ];
 

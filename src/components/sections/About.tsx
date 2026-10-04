@@ -23,15 +23,16 @@ export default function About() {
           </p>
 
           <p>
-            A dedicated Full Stack Developer with hands-on experience building scalable web
-            applications using Angular and Java (Vert.x). Skilled in API development,
-            server-side logic, and performance optimization.
+            My path has been unusually practical: SACCO platforms, reconciliation, dividends,
+            loan amortization, tenant databases, payments, and eventually a banking super-app.
+            I learned to ask what the software is actually doing to money and business.
           </p>
 
           <p>
-            Experienced in database management, cross-platform development, and integrating
-            third-party APIs. Passionate about building secure, user-focused solutions and
-            following best practices throughout the software development life cycle.
+            That has pushed me from implementing backend features toward thinking in systems,
+            failure modes, architecture, and ownership. My identity: backend/platform engineer
+            for reliable, transaction-heavy distributed systems, with strong financial-domain
+            and integration experience.
           </p>
         </div>
       </motion.div>

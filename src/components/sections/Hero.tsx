@@ -1,18 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
-
-const MatrixRain = dynamic(() => import("@/components/three/MatrixRain"), {
-  ssr: false,
-});
 
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-[calc(100dvh-3.5rem)] md:min-h-[100dvh] w-full overflow-hidden flex items-center justify-center">
-      {/* Matrix Background */}
-      <MatrixRain />
-
       {/* Content */}
       <div className="relative z-10 px-8 max-w-4xl">
         <motion.div
@@ -39,6 +31,24 @@ export default function Hero() {
           >
             Backend/Platform Engineer specializing in transaction-heavy systems
             with strong financial-domain and integration experience.
+          </motion.p>
+
+          <motion.p
+            className="text-xs text-muted mb-8 font-mono"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            Currently: Dashen Super App backend modernization · EagleLion (Oct 2025–Present)
+          </motion.p>
+
+          <motion.p
+            className="text-xs text-muted mb-8 font-mono"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.55 }}
+          >
+            Systems · Failure modes · Architecture · Ownership
           </motion.p>
 
           <motion.div
