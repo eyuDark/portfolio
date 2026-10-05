@@ -16,23 +16,21 @@ export default function About() {
 
         <div className="space-y-6 text-muted text-lg leading-relaxed border-l-2 border-border pl-8">
           <p>
-            I don&apos;t just build APIs—I design systems that handle failure gracefully.
-            With experience in financial systems, payment processing, and banking integrations,
-            I focus on what happens when things go wrong: timeouts, duplicates, partial states,
-            and recovery.
+            I started out building front-end and back-end pieces at Irak technologies,
+            then moved to eTech S.C. where I worked on a multi-tenant SACCO platform
+            handling reconciliation, dividends, loan amortization and attendance tracking.
           </p>
 
           <p>
-            My path has been unusually practical: SACCO platforms, reconciliation, dividends,
-            loan amortization, tenant databases, payments, and eventually a banking super-app.
-            I learned to ask what the software is actually doing to money and business.
+            From there I joined EagleLion System Technology, where I&apos;ve been contributing
+            to the Dashen Super App backend modernization across 50+ services. Most of that
+            work has been around banking and payment integrations, transaction flows, and
+            making them resilient to retries, timeouts and duplicate requests.
           </p>
 
           <p>
-            That has pushed me from implementing backend features toward thinking in systems,
-            failure modes, architecture, and ownership. My identity: backend/platform engineer
-            for reliable, transaction-heavy distributed systems, with strong financial-domain
-            and integration experience.
+            Along the way, dealing with real financial transactions pushed me to think more
+            about how systems behave when they fail, and how to design for those cases.
           </p>
         </div>
       </motion.div>

@@ -9,15 +9,19 @@ const skillCategories = [
   },
   {
     title: "Backend",
-    skills: ["Angular", "Express.js", "Vert.x", "Spring Boot", "Gin"],
+    skills: ["Express.js", "Vert.x", "Spring Boot", "Gin", "Prisma", "Mongoose"],
   },
   {
     title: "Databases",
-    skills: ["PostgreSQL", "MySQL", "Redis", "MongoDB"],
+    skills: ["PostgreSQL", "MySQL", "Redis", "Redis Sentinel", "MongoDB"],
   },
   {
     title: "Infrastructure",
-    skills: ["Docker", "Kubernetes", "Jenkins", "GitLab CI", "Argo"],
+    skills: ["Docker", "Kubernetes", "Jenkins", "GitLab CI", "Argo", "Vault", "Nx"],
+  },
+  {
+    title: "Queues",
+    skills: ["BullMQ"],
   },
   {
     title: "Observability",

@@ -11,13 +11,12 @@ const experiences = [
     period: "Oct 2025 – Present",
     domain: "FinTech",
     highlights: [
-      "Contributing to Dashen Super App backend modernization across 50+ services",
-      "Optimizing high-volume transaction workflows, idempotency, and deduplication",
       "Designed idempotent transaction paths with Redis SETNX-based deduplication to survive retries, timeouts, and partial provider failures",
-      "Core banking integrations (Flexcube/FCUBS) and multi-currency (FCY) payments",
-      "External financial network integrations: IPS, Telecom Postpaid, Mastercard MPGS",
-      "Platform engineering: Transaction Aggregator, Notification services, Fee engine",
-      "Led HLD/LLD decisions and service refactoring across a 50+ service ecosystem; improved log/request traceability",
+      "Refactored 50+ services under Dashen Super App — led HLD/LLD decisions where no dedicated solution architect was available",
+      "Built Transaction Aggregator, Notification, and Fee engine services with request tracing across the ecosystem",
+      "Integrated core banking (Flexcube/FCUBS), multi-currency (FCY) payments, IPS, Telecom Postpaid, and Mastercard MPGS",
+      "Improved log/request traceability to connect customer incidents to specific transactions across services",
+      "Reviewed junior engineers' work and established code review standards across the team",
     ],
   },
   {
