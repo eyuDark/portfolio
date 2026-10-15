@@ -39,7 +39,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            Currently: Dashen Super App backend modernization · EagleLion (Oct 2025–Present)
+            Currently: Dashen Bank Super App backend modernization · Eaglelion (Oct 2024–Present)
           </motion.p>
 
           <motion.p

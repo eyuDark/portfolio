@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 
 const realProjects = [
   {
-    title: "Dashen Super App Backend Modernization",
+    title: "Dashen Bank Super App Backend Modernization",
     category: "Fintech Platform",
-    company: "EagleLion",
-    tech: "Node.js, TypeScript, PostgreSQL, Redis, Kubernetes",
+    company: "Eaglelion",
+    tech: "Node.js, TypeScript, PostgreSQL, MongoDB, Redis, Docker, Kubernetes",
     description:
-      "Modernized backend infrastructure for one of Ethiopia's largest fintech ecosystems. Refactored 50+ services, implemented transaction consistency patterns, and established platform observability.",
+      "Modernized backend infrastructure for one of Ethiopia's largest fintech platforms. Refactored 50+ services, implemented transaction consistency patterns, and established platform observability.",
     highlights: [
       "Architected core transaction platform handling multi-bank transfers and IPS integration",
       "Built multi-currency payment workflows (FCY) with core banking integration (FCUBS)",
@@ -33,16 +33,63 @@ const realProjects = [
     ],
   },
   {
-    title: "Share Management System",
-    category: "Financial System",
-    company: "eTech S.C.",
-    tech: "Java, Vert.x, PostgreSQL, REST APIs",
+    title: "SkillCraft — AI Agent Skills Compiler & CLI Engine",
+    category: "Personal Project",
+    company: "Personal",
+    tech: "TypeScript, Node.js, Commander.js, Zod, Vitest",
+    status: "Completed",
     description:
-      "Dedicated platform for managing shareholder records, automated dividend distribution workflows, and real-time stakeholder attendance tracking.",
+      "Production-grade CLI tool and multi-target compiler engine that transforms structured AI agent specifications (SkillSpec IR) into portable artifacts for Claude Code and Cursor.",
     highlights: [
-      "Automated dividend calculation and reinvestment workflows",
-      "Real-time attendance tracking engine for stakeholder assemblies",
-      "Member registration, share tracking, and dividend distribution via RESTful services",
+      "Engineered a robust Zod-based Abstract Syntax Tree (AST) schema and static linter enforcing trigger clarity and scope boundaries",
+      "Implemented multi-target transpilation with smart glob inference, atomic staging, and static security auditing",
+      "Authored a comprehensive test suite using Vitest covering unit schema validation, authoring fixtures, compiler pipelines, and CLI smoke tests",
+    ],
+  },
+  {
+    title: "lazyALARM — Full-Stack IoT & Smart Alarm Platform",
+    category: "Personal Project",
+    company: "Personal",
+    tech: "TypeScript, Express, Prisma ORM, PostgreSQL, Zod, Vitest, OpenAPI",
+    status: "In Progress",
+    description:
+      "A smart scheduling and alarm platform engineered for multi-device synchronization and progressive wake-up routines. Fully tested backend API with complete UI/UX design ready.",
+    highlights: [
+      "Layered backend structure (routes, controllers, domain services) enforcing strict resource ownership and data isolation",
+      "Robust runtime request validation using Zod and automated OpenAPI 3.0 documentation via Swagger UI",
+      "Comprehensive automated test suite with Vitest and Supertest covering authentication, middleware, and domain logic",
+      "Multi-device registration supporting push notification tokens and timezone offset normalization",
+    ],
+  },
+  {
+    title: "SACCO SaaS — Multi-Tenant Core Banking MVP",
+    category: "Personal Project",
+    company: "Personal",
+    tech: "TypeScript, Express, PostgreSQL (RLS), Redis, BullMQ, Docker, Zod, Vitest",
+    status: "In Progress",
+    description:
+      "Multi-tenant core banking engine for Savings & Credit Cooperatives (SACCOs), enforcing database-level data isolation via PostgreSQL Row-Level Security (RLS).",
+    highlights: [
+      "Strict database-level data isolation across tenants using native PostgreSQL Row-Level Security (RLS)",
+      "Immutable double-entry accounting ledger with transaction atomicity, balanced debit/credit validation, and idempotency deduplication",
+      "Comprehensive Member Management and KYC modules with deterministic member numbering and audit logging",
+      "Savings and Shares subsystem handling account lifecycles, deposits, withdrawals, share transfers, and interest calculations",
+      "Asynchronous job pipelines via Redis and BullMQ for scheduled interest compounding and batch reconciliation, backed by 44 passing tests",
+    ],
+  },
+  {
+    title: "agent-hitl-telegram — Distributed Human-in-the-Loop Engine",
+    category: "Personal Project",
+    company: "Personal",
+    tech: "TypeScript, Fastify, PostgreSQL, Prisma, Redis, BullMQ, Telegram Bot API, MCP",
+    status: "Completed",
+    description:
+      "Distributed authorization engine that intercepts privileged tool calls from AI agents (LangGraph, Vercel AI SDK, Claude Code, Cursor) and routes interactive approval requests to Telegram.",
+    highlights: [
+      "Atomic state transitions for approvals using Redis 7 and custom Lua scripts to prevent double-taps and race conditions",
+      "Asynchronous job pipelines via BullMQ for delayed TTL expirations, retries, and secure callback resumption with HMAC signatures",
+      "Model Context Protocol (MCP) server enabling seamless integration across local and cloud AI environments with argument redaction",
+      "Append-only PostgreSQL audit ledger recording all sensitive tool executions and administrative decisions",
     ],
   },
   {
@@ -57,21 +104,7 @@ const realProjects = [
       "JWT authentication and token bucket rate limiting middleware",
       "Reverse proxying and route-based load balancing using fasthttp",
       "Structured request logging and correlation ID propagation",
-      "Targeting 90%+ test coverage using testify",
-    ],
-  },
-  {
-    title: "Library Management System",
-    category: "Personal Project",
-    company: "Personal",
-    tech: "Go, Gin, GORM, PostgreSQL, JWT",
-    status: "Completed",
-    description:
-      "RESTful backend service for managing users, catalog, and lending workflows with role-based access control.",
-    highlights: [
-      "Role-based access control (RBAC) with JWT authentication",
-      "Relational data modeling and persistence using GORM and PostgreSQL",
-      "Comprehensive unit test suite for auth and domain logic",
+      "Developing automated tests for middleware and core gateway functionality",
     ],
   },
 ];

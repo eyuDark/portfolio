@@ -23,13 +23,13 @@ export default function ContactTerminal() {
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">Contact</h2>
 
         {/* Terminal Window */}
-        <div className="border border-border bg-black font-mono text-sm">
+        <div className="border border-zinc-700 bg-zinc-900 font-mono text-sm">
           {/* Terminal Header */}
-          <div className="border-b border-border px-4 py-3 flex items-center gap-2">
+          <div className="border-b border-zinc-700 px-4 py-3 flex items-center gap-2">
             <div className="flex gap-1.5">
-              <div className="w-3 h-3 rounded-full border border-border"></div>
-              <div className="w-3 h-3 rounded-full border border-border"></div>
-              <div className="w-3 h-3 rounded-full border border-border"></div>
+              <div className="w-3 h-3 rounded-full border border-zinc-600"></div>
+              <div className="w-3 h-3 rounded-full border border-zinc-600"></div>
+              <div className="w-3 h-3 rounded-full border border-zinc-600"></div>
             </div>
             <span className="text-muted ml-2">eyuel@portfolio ~ contact</span>
           </div>
@@ -41,9 +41,9 @@ export default function ContactTerminal() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3 }}
-              className="text-muted"
+              className="text-emerald-600"
             >
-              <span className="text-foreground">$</span> cat contact.info
+              <span className="text-emerald-600">$</span> cat contact.info
             </motion.div>
 
             {commands.map((cmd, index) => (
@@ -55,19 +55,19 @@ export default function ContactTerminal() {
                 transition={{ duration: 0.3, delay: 0.1 * (index + 1) }}
                 className="flex items-start"
               >
-                <span className="text-foreground mr-2">&gt;</span>
-                <span className="text-muted mr-2 min-w-[80px]">{cmd.label}:</span>
+                <span className="text-emerald-600 mr-2">&gt;</span>
+                <span className="text-emerald-700 mr-2 min-w-[80px]">{cmd.label}:</span>
                 {cmd.href ? (
                   <a
                     href={cmd.href}
                     target={cmd.href.startsWith("mailto") ? undefined : "_blank"}
                     rel="noopener noreferrer"
-                    className="text-foreground hover:underline"
+                    className="text-emerald-600 hover:text-emerald-500 hover:underline"
                   >
                     {cmd.value}
                   </a>
                 ) : (
-                  <span className="text-foreground">{cmd.value}</span>
+                  <span className="text-emerald-600">{cmd.value}</span>
                 )}
               </motion.div>
             ))}
@@ -79,8 +79,8 @@ export default function ContactTerminal() {
               transition={{ duration: 0.3, delay: 0.7 }}
               className="pt-4"
             >
-              <span className="text-foreground">$</span>
-              <span className="ml-2 animate-pulse">_</span>
+              <span className="text-emerald-600">$</span>
+              <span className="ml-2 animate-pulse text-emerald-600">_</span>
             </motion.div>
           </div>
         </div>

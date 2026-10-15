@@ -16,21 +16,22 @@ export default function About() {
 
         <div className="space-y-6 text-muted text-lg leading-relaxed border-l-2 border-border pl-8">
           <p>
-            I started out building front-end and back-end pieces at Irak technologies,
-            then moved to eTech S.C. where I worked on a multi-tenant SACCO platform
-            handling reconciliation, dividends, loan amortization and attendance tracking.
+            I specialize in building and modernizing financial platforms, payment engines, and
+            distributed banking integrations. At eTech S.C., I developed multi-tenant SACCO management
+            and share tracking systems, implementing financial workflows for loan amortization, dividend
+            distribution, and reconciliation.
           </p>
 
           <p>
-            From there I joined EagleLion System Technology, where I&apos;ve been contributing
-            to the Dashen Super App backend modernization across 50+ services. Most of that
-            work has been around banking and payment integrations, transaction flows, and
-            making them resilient to retries, timeouts and duplicate requests.
+            Currently at Eaglelion System Technologies, I serve as Backend Engineer and Team Lead
+            contributing to the Dashen Bank Super App backend modernization across 50+ services. My work
+            focuses on mission-critical payment workflows, core banking integrations (FCUBS, IPS, FCY),
+            and transaction reliability through idempotency and Redis deduplication.
           </p>
 
           <p>
-            Along the way, dealing with real financial transactions pushed me to think more
-            about how systems behave when they fail, and how to design for those cases.
+            Dealing with real financial transactions drives my passion for system architecture, failure-mode
+            resilience, and engineering clean, high-performance distributed backends.
           </p>
         </div>
       </motion.div>

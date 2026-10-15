@@ -5,37 +5,37 @@ import { motion } from "framer-motion";
 const skillCategories = [
   {
     title: "Languages",
-    skills: ["Java", "JavaScript", "TypeScript", "Go"],
+    skills: ["TypeScript", "JavaScript", "Python", "Java", "Go"],
   },
   {
     title: "Backend",
-    skills: ["Express.js", "Vert.x", "Spring Boot", "Gin", "Prisma", "Mongoose"],
+    skills: ["Node.js", "Express.js", "Java Vert.x", "Spring Boot", "Gin"],
   },
   {
     title: "Databases",
-    skills: ["PostgreSQL", "MySQL", "Redis", "Redis Sentinel", "MongoDB"],
+    skills: ["PostgreSQL", "MongoDB", "MySQL", "Prisma ORM", "SQL Optimization"],
   },
   {
-    title: "Infrastructure",
-    skills: ["Docker", "Kubernetes", "Jenkins", "GitLab CI", "Argo", "Vault", "Nx"],
+    title: "Messaging & Caching",
+    skills: ["Redis", "BullMQ", "Background Jobs", "Async Processing"],
   },
   {
-    title: "Queues",
-    skills: ["BullMQ"],
+    title: "Architecture",
+    skills: ["Microservices", "REST APIs", "Event-Driven", "Transaction Reliability", "Idempotency"],
   },
   {
-    title: "Observability",
-    skills: ["Grafana", "Loki", "Pino", "Prometheus"],
+    title: "Infra & Observability",
+    skills: ["Docker", "Kubernetes", "GitLab CI/CD", "Grafana", "Loki", "Pino"],
   },
   {
     title: "Practices",
-    skills: ["REST APIs", "CI/CD", "Idempotency", "Distributed Systems", "Agile"],
+    skills: ["API Security", "Schema Design", "Code Reviews", "Unit Testing", "Debugging"],
   },
 ];
 
 const certifications = [
   { name: "AWS Certified Cloud Practitioner", status: "Completed" },
-  { name: "AWS Solutions Architect", status: "In Progress" },
+  { name: "AWS Solutions Architect – Associate", status: "In Progress" },
 ];
 
 export default function Skills() {
