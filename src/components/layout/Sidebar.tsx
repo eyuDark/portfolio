@@ -88,7 +88,7 @@ export default function Sidebar() {
         transition={{ duration: 0.4, delay: 0.5 }}
       >
         <a
-          href="https://github.com/eyuel-tefera"
+          href="https://github.com/eyuDark"
           target="_blank"
           rel="noopener noreferrer"
           className="text-muted hover:text-foreground transition-colors"
@@ -96,7 +96,15 @@ export default function Sidebar() {
           GitHub
         </a>
         <a
-          href="https://linkedin.com/in/eyuel-tefera"
+          href="https://gitlab.com/eyuel.tefera01"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-muted hover:text-foreground transition-colors"
+        >
+          GitLab
+        </a>
+        <a
+          href="https://www.linkedin.com/in/eyuel-tefera-32b7a2287/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-muted hover:text-foreground transition-colors"

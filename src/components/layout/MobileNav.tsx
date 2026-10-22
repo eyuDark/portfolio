@@ -135,10 +135,13 @@ export default function MobileNav({
                     Download CV
                   </a>
                   <div className="flex gap-6 text-xs text-muted">
-                    <a href="https://github.com/eyuel-tefera" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                    <a href="https://github.com/eyuDark" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
                       GitHub
                     </a>
-                    <a href="https://linkedin.com/in/eyuel-tefera" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                    <a href="https://gitlab.com/eyuel.tefera01" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                      GitLab
+                    </a>
+                    <a href="https://www.linkedin.com/in/eyuel-tefera-32b7a2287/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
                       LinkedIn
                     </a>
                   </div>

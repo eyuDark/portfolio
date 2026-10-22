@@ -52,6 +52,7 @@ const realProjects = [
     company: "Personal",
     tech: "TypeScript, Express, Prisma ORM, PostgreSQL, Zod, Vitest, OpenAPI",
     status: "In Progress",
+    github: "https://github.com/eyuDark/lazyALARM-express",
     description:
       "A smart scheduling and alarm platform engineered for multi-device synchronization and progressive wake-up routines. Fully tested backend API with complete UI/UX design ready.",
     highlights: [
@@ -83,6 +84,7 @@ const realProjects = [
     company: "Personal",
     tech: "TypeScript, Fastify, PostgreSQL, Prisma, Redis, BullMQ, Telegram Bot API, MCP",
     status: "Completed",
+    github: "https://github.com/eyuDark/agent-hitl-telegram",
     description:
       "Distributed authorization engine that intercepts privileged tool calls from AI agents (LangGraph, Vercel AI SDK, Claude Code, Cursor) and routes interactive approval requests to Telegram.",
     highlights: [
@@ -98,6 +100,7 @@ const realProjects = [
     company: "Personal",
     tech: "Go, Gin, Fasthttp, JWT",
     status: "In Progress",
+    github: "https://github.com/eyuDark/goApiGateway",
     description:
       "High-performance modular API Gateway designed for microservices architectures with custom middleware, rate limiting, and request proxying.",
     highlights: [
@@ -150,11 +153,23 @@ export default function Projects() {
                     {project.company} · {project.category}
                   </p>
                 </div>
-                {project.status && (
-                  <span className="text-xs border border-border px-2 py-0.5 text-muted">
-                    {project.status}
-                  </span>
-                )}
+                <div className="flex items-center gap-2">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs border border-border px-2 py-0.5 text-muted hover:text-foreground hover:border-foreground transition-colors"
+                    >
+                      GitHub ↗
+                    </a>
+                  )}
+                  {project.status && (
+                    <span className="text-xs border border-border px-2 py-0.5 text-muted">
+                      {project.status}
+                    </span>
+                  )}
+                </div>
               </div>
 
               <p className="text-xs text-muted mb-3 font-mono">{project.tech}</p>

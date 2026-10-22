@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 const commands = [
   { label: "email", value: "eyuel.tefera01@gmail.com", href: "mailto:eyuel.tefera01@gmail.com" },
-  { label: "linkedin", value: "linkedin.com/in/eyuel-tefera", href: "https://linkedin.com/in/eyuel-tefera" },
-  { label: "github", value: "github.com/eyuel-tefera", href: "https://github.com/eyuel-tefera" },
-  { label: "gitlab", value: "gitlab.com/eyuel-tefera", href: "https://gitlab.com/eyuel-tefera" },
+  { label: "linkedin", value: "linkedin.com/in/eyuel-tefera-32b7a2287", href: "https://www.linkedin.com/in/eyuel-tefera-32b7a2287/" },
+  { label: "github", value: "github.com/eyuDark", href: "https://github.com/eyuDark" },
+  { label: "gitlab", value: "gitlab.com/eyuel.tefera01", href: "https://gitlab.com/eyuel.tefera01" },
   { label: "location", value: "Addis Ababa, Ethiopia", href: null },
 ];
 
